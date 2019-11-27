@@ -16,7 +16,6 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#eb4450",
-    "navigationBarTitleText": "购物街",
     "navigationBarTextStyle": "white"
   },
   "tabBar": {
@@ -41,12 +40,12 @@
         "iconPath": "/assets/tabbar/cart.png",
         "selectedIconPath": "/assets/tabbar/cart-o.png"
       },
-        {
-          "pagePath": "pages/user/index",
-          "text": "我的",
-          "iconPath": "/assets/tabbar/my.png",
-          "selectedIconPath": "/assets/tabbar/my-o.png"
-        }
+      {
+        "pagePath": "pages/user/index",
+        "text": "我的",
+        "iconPath": "/assets/tabbar/my.png",
+        "selectedIconPath": "/assets/tabbar/my-o.png"
+      }
     ]
   },
   "style": "v2",

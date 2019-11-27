@@ -1,0 +1,6 @@
+.banner {
+  height: 340rpx;
+}
+.banner .swiper-item {
+  width: 100%;
+}

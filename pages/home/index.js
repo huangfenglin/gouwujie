@@ -1,12 +1,13 @@
 // pages/home/index.js
-import {getSwiperData} from '../../service/home.js'
+import { getSwiperData, getNavbarData} from '../../service/home.js'
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    swiper:[]
+    swiper:[],
+    navbar:[]
   },
 
   /**
@@ -17,6 +18,12 @@ Page({
       console.log(res)
       this.setData({
         swiper: res.data.message
+      })
+    }),
+      getNavbarData().then(res=>{
+      console.log(res)
+      this.setData({
+        navbar: res.data.message
       })
     })
   },

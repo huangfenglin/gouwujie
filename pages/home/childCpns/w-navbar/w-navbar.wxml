@@ -1,0 +1,7 @@
+<view class="navContainer">
+    <block wx:for="{{navbar}}" wx:key="{{item.name}}" >
+      <navigator class="navbar">
+        <image class="img" src="{{item.image_src}}"></image>
+      </navigator>
+    </block>
+</view>

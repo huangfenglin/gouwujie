@@ -5,3 +5,8 @@ export function getSwiperData(){
     url:"/home/swiperdata"
   })
 }
+export function getNavbarData(){
+  return request({
+    url:"/home/catitems"
+  })
+}

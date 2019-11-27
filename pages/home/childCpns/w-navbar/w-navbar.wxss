@@ -1,0 +1,12 @@
+.navContainer {
+  display: flex;
+}
+.navContainer .navbar {
+  padding: 10rpx;
+  text-align: center;
+  flex: 1;
+}
+.navContainer .navbar .img {
+  height: 120rpx;
+  width: 120rpx;
+}

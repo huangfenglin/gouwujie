@@ -2,3 +2,5 @@
 <w-search/>
 <!-- 轮播图 -->
 <w-swiper list="{{swiper}}"/>
+<!-- 分类导航 -->
+<w-navbar navbar="{{navbar}}"/>

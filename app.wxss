@@ -1,10 +1,10 @@
-/**app.wxss**/
-.container {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding: 200rpx 0;
+@import "./styles/iconfont.wxss";
+page,view,text,image,button,input,swiper,swiper-item,navigator,checkbox,rich-text,radio{
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
-} 
+}
+
+image{
+  width: 100%;
+}

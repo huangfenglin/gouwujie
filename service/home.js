@@ -5,8 +5,15 @@ export function getSwiperData(){
     url:"/home/swiperdata"
   })
 }
+// 导航栏数据
 export function getNavbarData(){
   return request({
     url:"/home/catitems"
+  })
+}
+// 楼层数据
+export function getFloorData(){
+  return request({
+    url:'/home/floordata'
   })
 }

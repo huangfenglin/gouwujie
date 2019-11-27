@@ -2,7 +2,8 @@
   "usingComponents": {
     "w-search":"/components/w-search/w-search",
     "w-swiper":"./childCpns/w-swiper/w-swiper",
-    "w-navbar": "./childCpns/w-navbar/w-navbar"
+    "w-navbar": "./childCpns/w-navbar/w-navbar",
+    "w-floor": "./childCpns/w-floor/w-floor"
   },
   "navigationBarTitleText": "购物街"
 }

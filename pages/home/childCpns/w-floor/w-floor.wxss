@@ -1,0 +1,24 @@
+.img {
+  background-color: #f4f4f4;
+  height: 60rpx;
+}
+.content {
+  border-top: 16rpx solid #fff;
+  border-left: 14rpx solid #fff;
+  border-right: 14rpx solid #fff;
+  overflow: hidden;
+  /* 后4个超链接 */
+}
+.content .floor_item {
+  float: left;
+  width: 33.33%;
+}
+.content .floor_item image {
+  /* 去除图片默认的3px间隙！！！ */
+  display: block;
+}
+.content .floor_item:nth-last-child(-n + 4) image {
+  border-left: 8rpx solid #fff;
+  border-bottom: 12rpx solid #fff;
+  height: 207.97413793rpx;
+}

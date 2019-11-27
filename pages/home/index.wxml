@@ -4,3 +4,5 @@
 <w-swiper list="{{swiper}}"/>
 <!-- 分类导航 -->
 <w-navbar navbar="{{navbar}}"/>
+<!-- 商城楼层 -->
+<w-floor floor="{{floor}}"/>

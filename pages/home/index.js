@@ -1,5 +1,5 @@
 // pages/home/index.js
-import { getSwiperData, getNavbarData} from '../../service/home.js'
+import { getSwiperData, getNavbarData, getFloorData} from '../../service/home.js'
 Page({
 
   /**
@@ -7,7 +7,8 @@ Page({
    */
   data: {
     swiper:[],
-    navbar:[]
+    navbar:[],
+    floor:[]
   },
 
   /**
@@ -20,10 +21,16 @@ Page({
         swiper: res.data.message
       })
     }),
-      getNavbarData().then(res=>{
+    getNavbarData().then(res=>{
       console.log(res)
       this.setData({
         navbar: res.data.message
+      })
+    })
+    getFloorData().then(res=>{
+      console.log(res)
+      this.setData({
+        floor: res.data.message
       })
     })
   },

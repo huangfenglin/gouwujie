@@ -1,0 +1,26 @@
+<view>
+
+  <block wx:for="{{floor}}" 
+  wx:for-item="item1"
+  wx:for-index="index1"
+  wx:key="{{index}}">
+    <view>
+       <image src="{{item1.floor_title.image_src}}" class="img"/>
+    </view>
+
+    <view class="content">
+      <block 
+      wx:for="{{item1.product_list}}" 
+      wx:for-item="item2"
+      wx:for-index="index2"
+      wx:key="{{item2.name}}"
+      >
+      <navigator class="floor_item">
+      <image mode="{{index2===0?'widthFix':'scaleToFill'}}" class="image" src="{{item2.image_src}}" />
+      </navigator>
+      </block>
+    </view>
+    
+  </block>
+    
+</view>

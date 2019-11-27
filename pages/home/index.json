@@ -1,5 +1,6 @@
 {
   "usingComponents": {
+    "w-search":"/components/w-search/w-search",
     "w-swiper":"./childCpns/w-swiper/w-swiper"
   },
   "navigationBarTitleText": "购物街"

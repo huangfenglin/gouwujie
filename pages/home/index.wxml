@@ -1,1 +1,4 @@
+<!-- 顶部搜索框 -->
+<w-search/>
+<!-- 轮播图 -->
 <w-swiper list="{{swiper}}"/>

@@ -1,0 +1,6 @@
+<!--components/w-search/w-search.wxml-->
+<navigator class="headerInput">
+  <view class="input">
+  搜索
+  </view>
+</navigator>

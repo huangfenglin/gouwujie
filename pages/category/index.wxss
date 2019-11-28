@@ -1,1 +1,47 @@
-/* pages/category/index.wxss */
+.content {
+  display: flex;
+}
+.content .left {
+  flex: 30%;
+}
+.content .left .navbar {
+  font-size: 32rpx;
+  padding: 18rpx;
+}
+.content .right .item {
+  overflow: hidden;
+}
+.content .right .item .title {
+  padding: 18rpx;
+  text-align: center;
+  font-size: 32rpx;
+}
+.content .right .item .title::after {
+  content: " /";
+  color: #999;
+  font-size: 32rpx;
+}
+.content .right .item .title::before {
+  content: "/ ";
+  color: #999;
+  font-size: 32rpx;
+}
+.content .right .item .goods {
+  height: 164rpx;
+  overflow: hidden;
+  width: 130rpx;
+  margin: 20rpx 30rpx;
+  margin-bottom: 0;
+  float: left;
+}
+.content .right .item .goods image {
+  width: 120rpx;
+  display: block;
+}
+.content .right .item .goods .describe {
+  text-align: center;
+  font-size: 28rpx;
+}
+.active {
+  color: red;
+}

@@ -1,0 +1,50 @@
+.content {
+  display: flex;
+  
+.left {
+  flex: 30%;
+  .navbar {
+    font-size: 32rpx;
+    padding: 18rpx;
+  }
+}
+.right {
+  .item {
+    overflow: hidden;
+    .title {
+      padding: 18rpx;
+      text-align: center;
+      font-size: 32rpx;
+      &::after{
+        content: " /";
+        color: #999;
+        font-size: 32rpx;
+      }
+      &::before{
+        content: "/ ";
+        color: #999;
+        font-size: 32rpx;
+      }
+    }
+    .goods {
+      height: 164rpx;
+      overflow: hidden;
+      width: 130rpx;
+      margin: 20rpx 30rpx;
+      margin-bottom: 0;
+      float: left;
+      image {
+        width: 120rpx;
+        display: block;
+      }
+      .describe {
+        text-align: center;
+        font-size: 28rpx;
+      }
+    }
+  }
+}
+}
+.active {
+  color: red;
+}

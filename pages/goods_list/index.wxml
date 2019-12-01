@@ -4,7 +4,7 @@
 <!-- 商品列表开始 -->
 <view class="goods_view">
   <block wx:for="{{goods}}" wx:key="goods_id">
-    <navigator class="goods_item">
+    <navigator class="goods_item" url="/pages/goods_detail/index?goods_id={{item.goods_id}}">
       <view class="img_wrap">
         <image src="{{item.goods_small_logo||'http://img2.imgtn.bdimg.com/it/u=2053412733,2427372555&fm=26&gp=0.jpg'}}" mode="widthFix"  binderror=""  />
       </view>

@@ -1,0 +1,6 @@
+<!--pages/goods_list/childCpn/w-navbar/w-navbar.wxml-->
+<view class="container">
+  <block wx:for="{{['综合','销量','价格']}}" wx:key="{{index}}">
+    <view class="navbar {{currentIndex == index? 'active':''}}" bindtap="handleClick" data-index = '{{index}}'>{{item}}</view>
+  </block>
+</view>

@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  border-bottom: 2rpx solid #e1e1e1;
+}
+.container .navbar {
+  flex: 1;
+  padding: 20rpx 0;
+  font-size: 32rpx;
+  color: #8d8d8d;
+  text-align: center;
+}
+.active {
+  color: red !important;
+  border-bottom: 2rpx solid red;
+}

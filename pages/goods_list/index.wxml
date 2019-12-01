@@ -1,2 +1,27 @@
-<!--pages/goods_list/index.wxml-->
-<text>pages/goods_list/index.wxml</text>
+
+<w-search/>
+<!-- 头部导航 -->
+<!-- 商品列表开始 -->
+<view class="goods_view">
+  <block wx:for="{{goods}}" wx:key="goods_id">
+    <navigator class="goods_item">
+      <view class="img_wrap">
+        <image src="{{item.goods_small_logo}}" mode="widthFix"  binderror=""  />
+      </view>
+      <view class="goods_info">
+        <view class="goods_name">
+          {{item.goods_name}}
+        </view>
+        <view class="goods_price">
+            {{item.goods_price}}
+        </view>
+            
+      </view>
+        
+    </navigator>
+  </block>
+    
+
+    
+</view>
+  

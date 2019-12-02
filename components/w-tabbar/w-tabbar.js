@@ -4,17 +4,15 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    goods: {
+    title: {
       type: Array,
-      value: ''
+      value: []
+    },
+    // 要激活选中  索引
+    currentIndex: {
+      type: Number,
+      value: 0
     }
-  },
-
-  /**
-   * 组件的初始数据
-   */
-  data: {
-    currentIndex:0
   },
 
   /**
@@ -22,9 +20,8 @@ Component({
    */
   methods: {
     handleClick(event){
-      this.setData({
-        currentIndex:event.currentTarget.dataset.index
-      })
+      const index = event.currentTarget.dataset.index
+      this.triggerEvent("titleChange", { index });
     }
   }
 })

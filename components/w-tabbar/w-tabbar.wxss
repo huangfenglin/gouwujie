@@ -1,15 +1,15 @@
-.container {
+.tabbar .tabbar_title {
   display: flex;
   border-bottom: 2rpx solid #e1e1e1;
 }
-.container .navbar {
+.tabbar .tabbar_title .title_item {
   flex: 1;
   padding: 20rpx 0;
   font-size: 32rpx;
   color: #8d8d8d;
   text-align: center;
 }
-.active {
+.tabbar .active {
   color: red !important;
   border-bottom: 2rpx solid red;
 }

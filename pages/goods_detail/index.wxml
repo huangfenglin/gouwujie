@@ -3,7 +3,7 @@
     <swiper indicator-dots autoplay interval="3000"  circular>
       <block wx:for="{{goodsInfo.pics}}" wx:key="pics_id">
         <swiper-item>
-            <image mode="widthFix" src="{{item.pics_mid}}"></image>
+            <image mode="widthFix" bindtap="handlePreviewImg" data-src="{{item.pics_big}}" src="{{item.pics_mid}}"></image>
         </swiper-item>
       </block>
         

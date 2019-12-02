@@ -56,7 +56,7 @@
 			"list": [
 				{
 					"id": 0,
-					"name": "pages/goods_list/index",
+					"name": "商品列表页",
 					"pathName": "pages/goods_list/index",
 					"query": "cat_id=5",
 					"scene": null

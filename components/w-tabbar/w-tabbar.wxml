@@ -2,7 +2,7 @@
 <view class="tabbar">
   <view class="tabbar_title">
     <view 
-      bindtap="handleTap"
+      bindtap="handleClick"
       data-index="{{index}}"
       class="title_item {{currentIndex===index?'active':''}}"
       wx:for="{{titles}}" 

@@ -9,6 +9,8 @@ Page({
   TotalPages: 1, // 总页数,用来判断下一页还有没有数据
   data: {
     goods:[],
+    titles:['综合','销量','价格'],
+    currentIndex:0
   },
 
   /**
@@ -60,6 +62,13 @@ Page({
       this._gettGoodsList(this.params)
     }
 
+  },
+  // ---------------------业务逻辑-------------------------
+  titleChange(e){
+    this.setData({
+      currentIndex: e.detail.index
+    })
+    
   }
 
 })

@@ -75,5 +75,57 @@ Page({
        wx.setStorageSync("carts", carts); 
        // 重新计算总价格   小程序中没有计算属性（页面中没有计算属性，组件中却是有计算属性！！！）
        this.countAll(carts);
+    },
+ // 数量的编辑 
+ handleNumUpdate(e) {
+    // unit = +1 || -1 
+    const {unit,index} = e.currentTarget.dataset
+      // 获取到了 data中的购物车数组
+      let {carts} = this.data
+      // 判断 数量是否超出界限 
+    // 1 当数量大于等于库存 提示用户  unit也做判断 
+    // 2 当数量等于1 unit也做判断 
+    if(unit === 1 && carts[index].nums>=carts[index].goods_number){
+      wx.showToast({
+        title:"库存不足",
+        icon:"none",
+        mask:true
+      });
+      return
+    } else if(carts[index].nums === 1 && unit === -1) {
+      // 提示用户是否要删除商品
+      wx.showModal({
+        title:"警告",
+        content: '您是否要删除该商品？',
+        showCancel: true,
+        cancelText: '取消',
+        cancelColor: '#000000',
+        confirmText: '确定',
+        confirmColor: '#3CC51F',
+        success:(result)=>{
+          if(result.confirm) {
+            // 从carts中删除该元素
+            carts.splice(index, 1);
+            this.setData({
+              carts
+            })
+            wx.setStorageSync("carts", carts);
+            this.countAll(carts);
+          } else {
+            console.log("取消");
+            
+          }
+        }
+
+      })
+    }else {
+      carts[index].nums += unit;
+      this.setData({
+        carts
+      })
+      wx.setStorageSync("carts", carts);
+
+      this.countAll(carts);
     }
+ }
 })

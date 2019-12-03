@@ -10,7 +10,9 @@ Page({
     address: {},
     carts: [],
     // 商品的总价格
-    totalPrice:0
+    totalPrice:0,
+    // 购物车全选
+    allChecked: false
   },
 
   /**
@@ -48,15 +50,21 @@ Page({
   countAll(carts) {
     let totalPrice = 0;
     let nums = 0;
+    // 只要有一个商品没选中 它的值就是false
+    let allChecked = true;
     carts.forEach(v=>{
       if(v.isChecked){
         totalPrice += v.nums*v.goods_price
         // 我们要的是总的数量 而不是要购买的种类！！
         nums += v.nums
+      } else {
+         // 未选中 
+         allChecked = false;
       }
       this.setData({
         totalPrice,
-        nums
+        nums,
+        allChecked
       })
     })
 
@@ -127,5 +135,16 @@ Page({
 
       this.countAll(carts);
     }
+ },
+ handleItemAll(){
+  //  1 获取自己的选中状态
+  let { allChecked, carts } = this.data;
+  allChecked = !allChecked;
+  carts.forEach(v => v.isChecked = allChecked);
+  this.setData({
+    carts
+  })
+  wx.setStorageSync("carts", carts);
+  this.countAll(carts);
  }
 })

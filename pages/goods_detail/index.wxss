@@ -44,11 +44,18 @@
   font-size: 24rpx;
 }
 .btm_tools .tool_item {
+  position: relative;
   flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+}
+.btm_tools .tool_item button {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
 }
 .btm_tools .tool_item:nth-last-child(-n+2) {
   flex: 2;

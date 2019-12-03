@@ -1,7 +1,50 @@
 <view class="address_view">
   <!-- 当没有收货地址的时候显示按钮 -->
   <button wx:if="{{!address.userName}}" bindtap="handleFinalGet">获取收货地址</button>
-    <!-- 有收货地址了 就显示 收货地址即可 -->
-    <view wx:else>{{address.userName}}</view>
+  <!-- 有收货地址了 就显示 收货地址即可 -->
+  <view wx:else>{{address.userName}}</view>
 </view>
-  
+
+<!-- 购物车开始 -->
+<view class="cart_content">
+  <view wx:if="{{carts.length}}">
+   <!-- 标题 -->
+   <view class="carts_title">购物车</view>
+   <!-- 内容 -->
+   <view class="carts_list">
+     <view class="cart_item" wx:for="{{carts}}" wx:key="goods_id">
+       <!-- 复选框 -->
+       <view class="cart_chk_wrap">
+           <checkbox-group bindchange="checkboxChange" data-index="{{index}}" >
+            <checkbox checked="{{item.isChecked}}" ></checkbox>
+          </checkbox-group>
+       </view>
+       <!-- 商品图片 -->
+       <view class="cart_img_wrap">
+         <image mode="widthFix" src="{{item.goods_small_logo}}"></image>
+       </view>
+       <!-- 商品信息 -->
+       <view class="cart_info">
+         <view class="goods_name">{{item.goods_name}}</view>
+         <view class="goods_price_wrap">
+           <view class="goods_price">{{item.goods_price}}</view>
+           <view class="cart_tool">
+             <view class="num_item nums_btn" >-</view>
+             <view class="num_item " >{{item.nums}}</view>
+             <view class="num_item nums_btn" >+</view>
+           </view>
+         </view>
+       </view>
+     </view>
+   </view>
+  </view>
+  <view wx:else>
+    <image
+      src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1575284185731&di=fa7274a75c77c854376759edb73b47d9&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2Fe1b1467beea0a9c7d6a56b32bac6d7e5dcd914f7c3e6-YTwUd6_fw658"
+      mode="widthFix" />
+
+  </view>
+  <view>
+      总价格:￥{{totalPrice}} 总数量:{{nums}}
+    </view>
+</view>

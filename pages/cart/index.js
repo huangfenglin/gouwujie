@@ -146,5 +146,31 @@ Page({
   })
   wx.setStorageSync("carts", carts);
   this.countAll(carts);
+ },
+//  结算事件
+ goAccount() {
+   // 1 获取收货地址
+    // 2 获取用户 选中了 的商品的数组的长度  filter 
+    // 也可通过 nums来做判断 都ok！！！
+    const {address,carts} = this.data
+    if(!address.userName) {
+      wx.showToast({
+        title: '请选择您的收货地址',
+        icon: 'none',
+        mask: true
+      });
+      return
+    }else if(carts.filter(v=>v.isChecked).length ===0){
+      wx.showToast({
+        title: '请选中要结算的商品',
+        icon: 'none',
+        mask: true
+      });
+      return
+    }
+    // 通过了验证的
+    wx.navigateTo({
+      url: '/pages/pay/index'
+    });
  }
 })

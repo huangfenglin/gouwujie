@@ -44,10 +44,15 @@
       mode="widthFix" />
 
   </view>
-    <checkbox-group bindchange="handleItemAll">
-    <checkbox checked="{{allChecked}}" ></checkbox>
-  </checkbox-group>
-  <view>
-      总价格:￥{{totalPrice}} 总数量:{{nums}}
-    </view>
 </view>
+  <view class="btm_count_wrap">
+  <view class="all_check_wrap">
+    <checkbox-group bindchange="handleItemAll">
+      <checkbox checked="{{allChecked}}"> 全选 </checkbox>
+    </checkbox-group>
+  </view>
+  <view class="all_price_wrap">
+    总价格: <text>￥{{totalPrice}}</text>
+  </view>
+  <view class="account" bindtap="goAccount">结算({{nums}})</view>
+  </view>

@@ -26,4 +26,13 @@ export const openSetting = ()=>{
     });
       
   })
-} 
+}
+// 执行用户登录
+export const login = ()=>{
+  return new Promise((resolve,reject)=>{
+    wx.login({
+      timeout: 10000,
+      success:resolve
+    })
+  })
+}

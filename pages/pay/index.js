@@ -1,6 +1,6 @@
 import regeneratorRuntime from '../../lib/runtime/runtime';
-import { getSetting, chooseAddress, openSetting, login } from "../../utils/wxAsync";
-import {getToken,getOlderNumber} from "../../service/pay.js"
+import { getSetting, chooseAddress, openSetting, login, requestPayment} from "../../utils/wxAsync";
+import {getToken,getOlderNumber,toPay,getOrder} from "../../service/pay.js"
 Page({
 
   /**
@@ -16,15 +16,6 @@ Page({
       // 结算的数量
       nums: 0
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
-  },
-
-
 
   /**
    * 生命周期函数--监听页面显示
@@ -85,9 +76,35 @@ Page({
          // 5 创建订单 获取订单编号
          
          const result = await getOlderNumber(orderParams,token)
-         console.log(result);
+         const order_number = result.data.message
          
+        // 6 获取支付参数
+        const result1 = await toPay(order_number,token)
+    
         
+        const pay = result1.data.message.pay;
+        // 7 调起微信支付   手机会出现支付的画面 
+        const res1 = await requestPayment(pay);
+        // 8 还需要查看一下 我们自己的后台的订单状态
+        const order = await getOrder(order_number,token)
+
+          // 9.1 获取缓存中的完整的购物车数据
+      let carts = wx.getStorageSync("carts");
+      // 留下未选中的商品即可
+      carts = carts.filter(v => !v.isChecked);
+      wx.setStorageSync("carts", carts);
+      // 9.2 弹出窗口 提示用户 
+      wx.showToast({
+        title: '支付成功',
+        duration: 1500,
+        mask: true,
+        success: (result) => {
+          // 9.3  跳转到 订单页面即可
+          wx.navigateTo({
+            url: '/pages/order/index'
+          });
+        }
+      });
    }
 
 })

@@ -36,3 +36,12 @@ export const login = ()=>{
     })
   })
 }
+// 微信支付
+export const requestPayment = (pay) =>{
+  return new Promise((resolve,reject)=>{
+    wx.requestPayment({
+      ...pay,
+      success:resolve
+    })
+  })
+}

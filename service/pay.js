@@ -16,3 +16,21 @@ export function getOlderNumber(orderParams,token) {
     header: { Authorization: token}
   })
 }
+// 支付
+export function toPay(order_number,token) {
+  return request({
+    url:"/my/orders/req_unifiedorder",
+    method:"post",
+    data:order_number,
+    header:{ Authorization: token}
+  })
+}
+// 查看订单状态
+export function getOrder(order_number,token) {
+  return request ({
+    url:"/my/orders/chkOrder",
+    method:"post",
+    data: order_number,
+    header: { Authorization: token}
+  })
+}

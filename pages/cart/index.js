@@ -12,7 +12,9 @@ Page({
     // 商品的总价格
     totalPrice:0,
     // 购物车全选
-    allChecked: false
+    allChecked: false,
+    // 结算的数量
+    nums: 0,
   },
 
   /**
@@ -115,7 +117,10 @@ Page({
             // 从carts中删除该元素
             carts.splice(index, 1);
             this.setData({
-              carts
+              carts,
+              nums:0,
+              totalPrice:0,
+              allChecked:false
             })
             wx.setStorageSync("carts", carts);
             this.countAll(carts);
